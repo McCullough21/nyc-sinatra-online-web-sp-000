@@ -5,10 +5,16 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
+<<<<<<< HEAD
     @title = params[:title]
     @title_ids = params[:figure][:title_ids]
     @landmark = params[:landmark]
     @landmark_ids = params[:figure][:landmark_ids]
+=======
+    @figure = Figure.create(name: params[:name])
+    if Landmark.find_or_create_by(params[:landmark])
+    end
+>>>>>>> 385f87084c72d2ee7fd759850afcfefc20279f20
 
     @figure = Figure.create(:name => params[:figure][:name])
     if !@title[:name].empty?
